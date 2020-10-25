@@ -1,0 +1,25 @@
+.happy, .sad{
+    float: left;
+    padding: 10px;
+}
+
+.my-mood h6{
+    font-size: 16px;
+    text-align: center;
+}
+
+.red-text {
+    color: red;
+    font-weight: bold;
+}
+.orangered-text {
+    color: orangered;
+    font-style: italic;
+    font-size: 20px;
+}
+.skinny {
+    font-family: fantasy;
+}
+.my-mood img {
+    width: 400px;
+}
