@@ -23,3 +23,17 @@
 .my-mood img {
     width: 400px;
 }
+.inline {
+    display: inline;
+    color: #777;
+    font-size: 18;
+    font-weight: bold;
+}
+.my-favorite ol div {
+    margin-top: 1em ;
+    margin-bottom: 1em ;
+}
+
+.my-favorite ol li {
+    font-weight: bold;
+}
