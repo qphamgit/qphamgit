@@ -1,0 +1,60 @@
+.heading {
+    color: #A4A400;
+    background-color: #F0F0F0;
+    font-family: "Lucida Sans Unicode", "Helvetica", "Arial", sans-serif;
+    text-align: center;
+    font-size: 22pt;
+    font-weight: bold;
+    text-decoration: underline;
+    width: max-content;
+    margin: auto auto 15px auto ;
+}
+.sub-heading {
+    text-align: left;
+    font-size: 18pt;
+    font-weight: normal;
+    width: auto;
+
+}
+
+body {
+    color: #404040;
+    background-color: white;
+    background-image: url("../images/recipe/silverware.jpg");
+    font-family: Georgia, 'Times New Roman', Times, serif;
+
+    font-size: 11pt;
+}
+
+.line {
+    height: 0.5px;
+    background: gray;
+    margin-bottom: 20px;
+  }
+
+
+.ingredients li {
+    list-style-image: url(../images/recipe/pie_bullet.png);
+}
+
+.directions ul li {
+    list-style-image: url(../images/recipe/pie_bullet.png);
+}
+
+
+.comments p {
+    background-color: #ffffa8;
+    font-style: italic;
+}
+
+.comments li {
+    list-style-type: none;
+}
+
+.links a {
+    color: #A4A400;
+}
+
+footer {
+    text-align: right;
+}
