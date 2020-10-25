@@ -58,16 +58,22 @@ footer {
         height: auto;
     }
 }
-.txtlink {
-    color:  #777;
+.left-nav li a {
     text-decoration: none;
-    font-size: 20px;
-    padding: 40px;
 }
 
+.left-nav li a:hover  {
+    text-decoration: underline;
+
+}
+
+.txtlink {
+    color:  #777;
+    font-size: 20px;
+    padding-left: 40px;
+}
 .sub-txtlink {
     color:  #777;
-    text-decoration: none;
     font-size: 16px;
     padding-left: 60px;
 }
