@@ -111,6 +111,9 @@ dl dt {
 .verification {
     text-align: right;
 }
+.verification img {
+    opacity: 0.5;
+}
 
 dd li {
     list-style-type: none;
