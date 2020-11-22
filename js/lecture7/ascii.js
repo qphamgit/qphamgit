@@ -1,5 +1,5 @@
-let id, animation, images;
-let pos = 0;
+let id, animation, images, timeout, pos = 0;
+window.onclick = resetTimer;
 function start () {
     if (id) clearInterval(id);
     document.getElementById('stop').disabled = false;
@@ -7,29 +7,23 @@ function start () {
     animation = document.getElementById("text-area").value;
     images = animation.split("=====\n");
     if (images.length < 2) {
-        images = generateAnimation(animation.split(''));
+        images = [];
+        animation.split('').reduce(function(pV, cV){
+            pV = pV+cV;
+            images.push(pV);
+            return pV;}, images);
     }
     if (document.getElementById("turbo").checked) id = setInterval(frame, 50);
     else id = setInterval(frame, 250);
-    let timeout = setTimeout(idleDisplay, 10000);
-    function idleDisplay() {
-        if (id) clearInterval(id);
-        document.getElementById('animation').disabled = false;
-        document.getElementById("text-area").value = animation;
-        while (timeout--) window.clearTimeout(id);
-    }
 }
-function generateAnimation(text) {
-    let newArr = [];
-    text.reduce(function(pV, cV){
-        pV = pV+cV;
-        newArr.push(pV);
-        return pV;}, []);
-    return newArr;
+function idleDisplay() {
+    if (id) clearInterval(id);
+    document.getElementById('animation').disabled = false;
+    document.getElementById("text-area").value = animation;
 }
 function frame() {
     pos++;
-    if (pos == images.length) pos = 0;
+    if (pos >= images.length) pos = 0;
     document.getElementById("text-area").value = images[pos];
 }
 function stop () {
@@ -47,4 +41,8 @@ function changeSpeed() {
     if (id) clearInterval(id);
     if (document.getElementById("turbo").checked) id = setInterval(frame, 50);
     else id = setInterval(frame, 250);
+}
+function resetTimer() {
+    clearTimeout(timeout);
+    timeout = setTimeout(idleDisplay, 10000);
 }
