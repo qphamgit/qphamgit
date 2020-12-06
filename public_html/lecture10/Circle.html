@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Circle </title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <link href="../../css/lecture10/circle.css" type="text/css" rel="stylesheet">
+  <script src="../../js/lecture10/circle.js"></script>
+</head>
+<body>
+<h1>The Moving Circles!</h1>
+<div class="input-form">
+     <label for="circle-width">Circle Width:</label><input id="circle-width" type="text" value="100"/>
+    <label for="growthAmount">Growth Amount: </label><input id="growthAmount" type="text" value="20"/>
+    <label for="speed">Speed: </label><input id="speed" type="text" value="250"/>
+    <label for="circleCt">Circle Count: </label><input id="circleCt" type="text" value="3"/>
+    <br/>
+    <input type="button" id="start" value="Start" />
+    <input type="button" id="stop" value="Stop" />
+
+</div>
+
+<!-- This part of the page represents the moving circles -->
+<div id="circles" class="circles">
+</div>
+
+</body>
+</html>
