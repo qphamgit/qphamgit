@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+  <title>Pet Gallery</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript"></script>
+  <script type="text/javascript" src="../../js/lecture14/spa.js"></script>
+  <script src="../../js/jquery/jquery.tmpl.js"></script>
+</head>
+<body>
+<p>Enter user Id </p>
+<p>First <input id='userId' type='text' name='userId'  /></p>
+<p><input id='send' type='button' value='Send'  /></p>
+<div id="posts">
+  <div id='postInfo' >
+  </div>
+</div>
+
+</body>
+
+<script id="userRow" type="text/x-jQuery-tmpl">
+  <h1>User Info</h1>
+  <div>
+    <p><b>Email:</b> ${email}</p>
+    <br/>
+  </div>
+  <h1>Posts Info</h1>
+</script>
+
+<script id="postRow" type="text/x-jQuery-tmpl">
+  <div>
+    <p><b>Post Title:</b> ${title}</p>
+    <p><b>Post Content: </b>${body}</p>
+    <div style="display: none">
+      <input id='postId' type='text' name='postId' value=${id} />
+     </div>
+    <a href="#" id='comments' class="comments"  onclick = "displayComments();">Show Comments</a>
+    <br/>
+    <div id='commentsInfo' style="display: none"></div>
+  </div>
+</script>
+<script id="commentRow" type="text/x-jQuery-tmpl">
+  <div>
+    <p>Comment from: ${email}</p>
+    <p>Title: ${name}</p>
+    <p>Content: ${name}</p>
+    <br/>
+  </div>
+</script>
+</html>
