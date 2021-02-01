@@ -27,19 +27,19 @@
 </script>
 
 <script id="postRow" type="text/x-jQuery-tmpl">
-  <div>
+  <div id="post">
     <p><b>Post Title:</b> ${title}</p>
     <p><b>Post Content: </b>${body}</p>
     <div style="display: none">
       <input id='postId' type='text' name='postId' value=${id} />
      </div>
-    <a href="#" id='comments' class="comments"  onclick = "displayComments();">Show Comments</a>
+    <a href="#" id='comments' class="comments"  onclick = "displayComments(${id});">Show Comments</a>
     <br/>
-    <div id='commentsInfo' style="display: none"></div>
+    <div id='commentsInfo'></div>
   </div>
 </script>
 <script id="commentRow" type="text/x-jQuery-tmpl">
-  <div>
+  <div id="comment">
     <p>Comment from: ${email}</p>
     <p>Title: ${name}</p>
     <p>Content: ${name}</p>

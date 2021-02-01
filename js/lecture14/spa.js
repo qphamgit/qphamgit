@@ -1,7 +1,27 @@
 let url = "https://jsonplaceholder.typicode.com/";
-function displayComments() {
-  $('#commentsInfo').toggle();
+
+function displayComments(postId) {
+  console.log(postId);
+  let comments = $("#commentsInfo").val();
+  console.log(comments);
+  // if( $('#commentsInfo').is(':empty') )
+  let commentInfoUrl = url + "comments?postId=" + postId;
+  fetch(commentInfoUrl)
+  .then(response => response.json())
+  .then(json => processCommentsInfo(json));
+
 }
+
+function processCommentsInfo(comments) {
+  console.log(comments);
+  $("#commentRow").tmpl(comments,
+      {
+        dataArrayIndex: function (item) {
+          return $.inArray(item, comments);
+        }
+      }).appendTo($('#commentsInfo'));
+}
+
 $(document).ready(function () {
 
   $("#send").click(updateData);
@@ -12,20 +32,11 @@ $(document).ready(function () {
     showComments();
   });
 
-  function processCommentsInfo(comments) {
-    console.log(comments);
-    $("#commentRow").tmpl(comments,
-        {
-          dataArrayIndex: function (item) {
-            return $.inArray(item, comments);
-          }
-        }).appendTo($('#commentsInfo'));
-  }
 
   function showComments() {
     let postId = $("#postId").val();
     console.log(postId);
-    let commentInfoUrl = url + "comments/?postId=" + postId;
+    let commentInfoUrl = url + "comments?postId=" + postId;
     fetch(commentInfoUrl)
     .then(response => response.json())
     .then(json => processCommentsInfo(json))
@@ -43,12 +54,11 @@ $(document).ready(function () {
   function processPostInfo(post) {
     console.log(post);
     $('#postRow').tmpl(post).appendTo($('#postInfo'));
-    showComments();
   }
 
   function processUserInfo(user) {
     $('#userRow').tmpl(user).appendTo($('#userInfo'));
-    let postInfoUrl = url + "posts/" + user.id;
+    let postInfoUrl = url + "posts?userId=" + user.id;
 
     fetch(postInfoUrl)
     .then(response => response.json())
